@@ -21,7 +21,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'google_id',
+        'level',
     ];
+
+    protected $table = 'user';
+
+    public $timestamps = false;
 
     /**
      * The attributes that should be hidden for serialization.
