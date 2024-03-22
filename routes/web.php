@@ -30,6 +30,22 @@ Route::get('/pendaftar', function () {
     return view('admin.pendaftar');
 });
 
+Route::get('/ipa', function () {
+    return view('admin.IPA.index');
+});
+
+Route::get('/ipa/1', function () {
+    return view('admin.IPA.detail');
+});
+
+Route::get('/ips/1', function () {
+    return view('admin.IPS.detail');
+});
+
+Route::get('/ips', function () {
+    return view('admin.IPS.index');
+});
+
 
 Route::get('auth/google', [GoogleController::class, 'redirectGoogle'])->name('auth.google');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
