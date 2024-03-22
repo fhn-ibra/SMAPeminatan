@@ -18,6 +18,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', function () {
+    return view('admin.login');
+});
+
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+
+Route::get('/pendaftar', function () {
+    return view('admin.pendaftar');
+});
+
 
 Route::get('auth/google', [GoogleController::class, 'redirectGoogle'])->name('auth.google');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
