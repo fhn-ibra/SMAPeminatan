@@ -13,9 +13,20 @@ use App\Http\Controllers\GoogleController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/UserLog', function(){
+    return view('user.dashboard.index');
+});
+Route::get('/pilihan', function(){
+    return view('user.index');
+});
+Route::get('/Jurusan1', function(){
+    return view('user.ipa');
+});
+Route::get('/Jurusan2', function(){
+    return view('user.ips');
+});
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.login');
 });
 
 Route::get('/login', function () {
@@ -29,7 +40,9 @@ Route::get('/dashboard', function () {
 Route::get('/pendaftar', function () {
     return view('admin.pendaftar');
 });
-
+Route::get('/kelas', function(){
+    return view('user.KELAS.index');
+});
 Route::get('/ipa', function () {
     return view('admin.IPA.index');
 });
