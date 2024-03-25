@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PendaftarExport;
 use App\Models\Siswa;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
@@ -21,5 +23,9 @@ class AdminController extends Controller
             'data' => Siswa::all()
         ];
         return view('admin.pendaftar', $data);
+    }
+
+    public function pendaftarExport(){
+        return Excel::download(new PendaftarExport, 'pendaftar.xlsx');
     }
 }

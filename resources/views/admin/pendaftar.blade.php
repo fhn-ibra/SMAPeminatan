@@ -27,7 +27,7 @@
     <div class="container-xl px-4 mt-n10">
         <div class="card card-header-actions">
             <div class="card-header">
-                <a class="btn btn-sm btn-primary-soft text-primary" href="#!"><b><i class="fa-solid fa-file-export me-1"></i> Export Data</b></a>
+                <a class="btn btn-sm btn-primary-soft text-primary" href="/pendaftar/export"><b><i class="fa-solid fa-file-export me-1"></i> Export Data</b></a>
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">

@@ -38,6 +38,7 @@ Route::get('/login', function () {
 
 Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
 Route::get('/pendaftar', [AdminController::class, 'pendaftar'])->name('pendaftar');
+Route::get('/pendaftar/export', [AdminController::class, 'pendaftarExport']);
 
 Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
 Route::get('/ipa/1', function () {
