@@ -40,9 +40,7 @@ Route::get('/dashboard', function () {
 Route::get('/pendaftar', function () {
     return view('admin.pendaftar');
 });
-Route::get('/kelas', function(){
-    return view('user.KELAS.index');
-});
+
 Route::get('/ipa', function () {
     return view('admin.IPA.index');
 });

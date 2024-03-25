@@ -2,36 +2,32 @@
     <div class="sidenav-menu">
         <div class="nav accordion" id="accordionSidenav">
 
-            {{-- <div class="sidenav-menu-heading">Kelas Kamu!</div>
-            <a class="nav-link" href="/kelas">
+
+
+            <div class="sidenav-menu-heading">Dashboard
+            </div>
+
+            <a class="nav-link" href="/dashboard">
+                <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                Dashboard
+            </a>
+
+            <a class="nav-link" href="/pendaftar">
+                <div class="nav-link-icon"><i data-feather="users"></i></div>
+                Pendaftar
+            </a>
+
+            <div class="sidenav-menu-heading">Kelas</div>
+
+            <a class="nav-link" href="/ipa">
                 <div class="nav-link-icon"><i class="fas fa-flask"></i></div>
-                Kelas
-            </a> --}}
+                IPA
+            </a>
+            <a class="nav-link active" href="/ips">
+                <div class="nav-link-icon"><i data-feather="compass"></i></div>
+                IPS
+            </a>
 
-           <div class="sidenav-menu-heading">Dashboard
-        </div>
-
-        <a class="nav-link" href="/dashboard">
-            <div class="nav-link-icon"><i data-feather="activity"></i></div>
-            Dashboard
-        </a>
-
-        <a class="nav-link" href="/pendaftar">
-            <div class="nav-link-icon"><i data-feather="users"></i></div>
-            Pendaftar
-        </a>
-
-        <div class="sidenav-menu-heading">Kelas</div>
-
-        <a class="nav-link" href="/ipa">
-            <div class="nav-link-icon"><i class="fas fa-flask"></i></div>
-            IPA
-        </a>
-        <a class="nav-link active" href="/ips">
-            <div class="nav-link-icon"><i data-feather="compass"></i></div>
-            IPS
-        </a>
-        
         </div>
     </div>
     <!-- Sidenav Footer-->
