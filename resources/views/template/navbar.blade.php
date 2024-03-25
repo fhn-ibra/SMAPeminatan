@@ -19,16 +19,11 @@
                 <h6 class="dropdown-header d-flex align-items-center">
                     <img class="dropdown-user-img" src="../img/user.png" />
                     <div class="dropdown-user-details">
-
-                        <div class="dropdown-user-details-name">auth</div>
-                        <div class="dropdown-user-details-email"><a href="/cdn-cgi/l/email-protection"
-                                class="__cf_email__" data-cfemail="156379607b7455747a793b767a78">usern@gmail.com</a>
-                        </div>-->
-                        <!--<div class="dropdown-user-details-name">Admin</div>
+                        <div class="dropdown-user-details-name">Admin</div>
                         <div class="dropdown-user-details-email"><a href="/cdn-cgi/l/email-protection"
                                 class="__cf_email__" data-cfemail="156379607b7455747a793b767a78">admin@gmail.com</a>
                         </div>
-                    </div>-->
+                    </div>
                 </h6>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#!">
