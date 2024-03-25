@@ -36,24 +36,20 @@ Route::get('/login', function () {
 });
 
 
+Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 Route::get('/pendaftar', function () {
     return view('admin.pendaftar');
 });
 
-
+Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
 Route::get('/ipa/1', function () {
     return view('admin.IPA.detail');
 });
 
+Route::get('/ips', [KelasController::class, 'ips'])->name('ips');
 Route::get('/ips/1', function () {
     return view('admin.IPS.detail');
 });
-
-
-
-Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
-Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
-Route::get('/ips', [KelasController::class, 'ips'])->name('ips');
 
 
 Route::get('auth/google', [GoogleController::class, 'redirectGoogle'])->name('auth.google');
