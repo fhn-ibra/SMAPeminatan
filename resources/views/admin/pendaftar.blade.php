@@ -36,8 +36,9 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>Asal Kelas</th>
-                            <th>Pilihan Kelas</th>
+                            <th>Pilihan Paket</th>
                             <th>Jurusan Kelas</th>
+                            <th>Pilihan Kelas</th>
                             <th>Kampus Tujuan</th>
                             <th>Fakultas Tujuan</th>
                             <th>Alasan</th>
@@ -49,8 +50,9 @@
                             <th>No</th>
                             <th>Nama</th>
                             <th>Asal Kelas</th>
-                            <th>Pilihan Kelas</th>
+                            <th>Pilihan Paket</th>
                             <th>Jurusan Kelas</th>
+                            <th>Pilihan Kelas</th>
                             <th>Kampus Tujuan</th>
                             <th>Fakultas Tujuan</th>
                             <th>Alasan</th>
@@ -58,34 +60,24 @@
                         </tr>
                     </tfoot>
                  <tbody>
+                    <?php $no = 1; ?>
+                    @foreach ($data as $item)     
                     <tr>
-                        <td>1</td>
-                        <td>Farhan Ibra Andhika</td>
-                        <td>X-3</td>
-                        <td>SAINTEK B</td>
-                        <td>IPA</td>
-                        <td>Universitas Indonesia</td>
-                        <td>Ilmu Komputer</td>
-                        <td>Deket Rumah Soalnya xixixixi</td>
+                        <td>{{ $no++ }}</td>
+                        <td>{{ $item->nama }}</td>
+                        <td>{{ $item->asal_kelas }}</td>
+                        <td>{{ $item->paket->nama_paket }}</td>
+                        <td>{{ $item->paket->jurusan->nama_jurusan }}</td>
+                        <td>{{ $item->paket->nama_kelas }}</td>
+                        <td>{{ $item->kampus_tujuan }}</td>
+                        <td>{{ $item->fakultas_tujuan }}</td>
+                        <td>{{ $item->alasan }}</td>
                         <td>
                             <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="" style="display: inline"><i data-feather="list"></i></a>
                             <a class="btn btn-datatable btn-icon btn-transparent-dark" href="" style="display: inline"><i data-feather="trash-2"></i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Muhammad Erlangga Putra Witanto</td>
-                        <td>X-7</td>
-                        <td>SOSHUM E</td>
-                        <td>IPS</td>
-                        <td>Universitas Gajah Mada</td>
-                        <td>Hukum</td>
-                        <td>Mau ngehukum orang sama warnanya karung goni</td>
-                        <td>
-                            <a class="btn btn-datatable btn-icon btn-transparent-dark me-2" href="" style="display: inline"><i data-feather="list"></i></a>
-                            <a class="btn btn-datatable btn-icon btn-transparent-dark" href="" style="display: inline"><i data-feather="trash-2"></i></a>
-                        </td>
-                    </tr>
+                    @endforeach
                  </tbody>
                 </main>
                 </table>

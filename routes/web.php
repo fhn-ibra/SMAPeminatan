@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\GoogleController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,10 +36,8 @@ Route::get('/login', function () {
 });
 
 
-Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
-Route::get('/pendaftar', function () {
-    return view('admin.pendaftar');
-});
+Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
+Route::get('/pendaftar', [AdminController::class, 'pendaftar'])->name('pendaftar');
 
 Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
 Route::get('/ipa/1', function () {
