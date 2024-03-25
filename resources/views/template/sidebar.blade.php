@@ -23,7 +23,7 @@
                 <div class="nav-link-icon"><i class="fas fa-flask"></i></div>
                 IPA
             </a>
-            <a class="nav-link active" href="/ips">
+            <a class="nav-link" href="/ips">
                 <div class="nav-link-icon"><i data-feather="compass"></i></div>
                 IPS
             </a>

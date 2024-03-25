@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,17 +35,11 @@ Route::get('/login', function () {
     return view('admin.login');
 });
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
 
 Route::get('/pendaftar', function () {
     return view('admin.pendaftar');
 });
 
-Route::get('/ipa', function () {
-    return view('admin.IPA.index');
-});
 
 Route::get('/ipa/1', function () {
     return view('admin.IPA.detail');
@@ -53,9 +49,11 @@ Route::get('/ips/1', function () {
     return view('admin.IPS.detail');
 });
 
-Route::get('/ips', function () {
-    return view('admin.IPS.index');
-});
+
+
+Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
+Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
+Route::get('/ips', [KelasController::class, 'ips'])->name('ips');
 
 
 Route::get('auth/google', [GoogleController::class, 'redirectGoogle'])->name('auth.google');

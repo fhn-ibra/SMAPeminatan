@@ -21,23 +21,22 @@
     <div class="container-xl px-4 mt-5">
         <div class="row mt-5">
             
-            <?php for($i=1;$i<=7;$i++){?>
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card border-start-lg border-start-primary">
-                    <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <div class="flex-grow-1">
-                                <div class="h6 fw-bold text-primary mb-2">XI IPS <?= $i ?></div>
-                                <div class="small fw-bold">SOSHUM A<?= $i ?></div>
-                                <a class="text-black stretched-link" href="ips/<?= $i ?>"></a>
-                            </div>
+       @foreach ($data as $item)    
+       <div class="col-xl-3 col-md-6 mb-4">
+           <div class="card border-start-lg border-start-primary">
+               <div class="card-body">
+                   <div class="d-flex align-items-center">
+                       <div class="flex-grow-1">
+                           <div class="h6 fw-bold text-primary mb-2">{{ $item->nama_kelas }}</div>
+                           <div class="small fw-bold">{{ $item->nama_paket }}</div>
+                           <a class="text-black stretched-link" href="/ips/{{ $item->id }}"></a>
+                       </div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-           <?php } ?>
+                   </div>
+               </div>
+           </div>
+       </div>
+       @endforeach
         </div>
     </div>
 </main>

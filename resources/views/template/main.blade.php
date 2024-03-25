@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>(judul) - SMA Peminatan</title>
+    <title> {{ empty($title) ? '(judul)' : $title }} - SMA Peminatan</title>
     <link href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="../style/styles.css" rel="stylesheet" />
@@ -33,11 +33,6 @@
                 <div class="container-xl px-4">
                     <div class="row">
                         <div class="col-md-6 small">Created by Ibra & Erlangga</div>
-                        <div class="col-md-6 text-md-end small">
-                            <a href="#!">Privacy Policy</a>
-                            ·
-                            <a href="#!">Terms &amp; Conditions</a>
-                        </div>
                     </div>
                 </div>
             </footer>
