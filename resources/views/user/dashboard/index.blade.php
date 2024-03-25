@@ -72,7 +72,9 @@
     <div class="container-xl px-4 mt-n10">
         <div class="card card-header-actions">
             <div class="card-header">
-                <a class="btn btn-sm btn-primary-soft text-primary" href="#!">Kelas</a>
+                <a class="btn btn-sm btn-primary-soft text-primary">XI IPA 1</a>
+                <h6>Kelas XI IPA 1<h6>
+
             </div>
             <div class="card-body">
                 <table id="datatablesSimple">
