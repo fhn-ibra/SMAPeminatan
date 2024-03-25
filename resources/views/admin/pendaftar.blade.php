@@ -67,8 +67,8 @@
                         <td>{{ $item->nama }}</td>
                         <td>{{ $item->asal_kelas }}</td>
                         <td>{{ $item->paket->nama_paket }}</td>
-                        <td>{{ $item->paket->jurusan->nama_jurusan }}</td>
-                        <td>{{ $item->paket->nama_kelas }}</td>
+                        <td><a href="/{{ strtolower($item->paket->jurusan->nama_jurusan) }}">{{ $item->paket->jurusan->nama_jurusan }}</a></td>
+                        <td><a href="/{{ strtolower($item->paket->jurusan->nama_jurusan) }}/{{ $item->paket_id }}">{{ $item->paket->nama_kelas }}</a></td>
                         <td>{{ $item->kampus_tujuan }}</td>
                         <td>{{ $item->fakultas_tujuan }}</td>
                         <td>{{ $item->alasan }}</td>

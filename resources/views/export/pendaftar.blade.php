@@ -10,7 +10,6 @@
         <th style="font-family: calibri; font-size: 12px; text-align: center; border: 1px solid black; background-color: yellow;">Kampus Tujuan</th>
         <th style="font-family: calibri; font-size: 12px; text-align: center; border: 1px solid black; background-color: yellow;">Fakultas Tujuan</th>
         <th style="font-family: calibri; font-size: 12px; text-align: center; border: 1px solid black; background-color: yellow;">Alasan</th>
-        <th style="font-family: calibri; font-size: 12px; text-align: center; border: 1px solid black; background-color: yellow;">Aksi</th>
     </tr>
     </thead>
     <tbody>

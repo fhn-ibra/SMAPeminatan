@@ -41,14 +41,11 @@ Route::get('/pendaftar', [AdminController::class, 'pendaftar'])->name('pendaftar
 Route::get('/pendaftar/export', [AdminController::class, 'pendaftarExport']);
 
 Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
-Route::get('/ipa/1', function () {
-    return view('admin.IPA.detail');
-});
+Route::get('/ipa/{id}', [KelasController::class, 'ipaDetail'])->name('ipa.detail');
 
 Route::get('/ips', [KelasController::class, 'ips'])->name('ips');
-Route::get('/ips/1', function () {
-    return view('admin.IPS.detail');
-});
+Route::get('/ips/{id}', [KelasController::class, 'ipsDetail'])->name('ips.detail');
+
 
 
 Route::get('auth/google', [GoogleController::class, 'redirectGoogle'])->name('auth.google');

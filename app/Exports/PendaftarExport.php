@@ -5,8 +5,9 @@ namespace App\Exports;
 use App\Models\Siswa;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
+use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
-class PendaftarExport implements FromView
+class PendaftarExport implements FromView, ShouldAutoSize
 {
 
     public function view(): View
