@@ -36,7 +36,7 @@
                             <div class="row">
                                 <div class="col-12">
                                     <div class="mb-5">
-                                        <h3>Log in Study Expo</h3>
+                                        <h3>Log in Sma Peminatan</h3>
                                     </div>
                                 </div>
                             </div>
@@ -97,12 +97,12 @@
 
 
 
-                                        <button
+                                        <!-- <button
                                             onclick="window.location.href='https://drive.google.com/file/d/1jQTLxCUyNiIzo3-7_xeH9T__1nrSkG4i/view?usp=drive_link'"
                                             class=" btn btn-primary btn-lg">
                                             <span class="ms-2 fs-6">Manual Book</span>
 
-                                        </button>
+                                        </button> -->
                                     </div>
                                     <br>
                                     <br>

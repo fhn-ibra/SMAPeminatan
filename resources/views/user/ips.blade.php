@@ -566,9 +566,9 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-lg">
+                                                <a href="/UserLog" class="btn btn-primary btn-lg">
                                                     Daftar
-                                                </button>
+                                                </a>
                                                 <!--<a href="#" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#pengerjaan">
         <i class="fas fa-rocket"></i> Daftar
     </a>-->
