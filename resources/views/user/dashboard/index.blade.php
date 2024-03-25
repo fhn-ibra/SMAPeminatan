@@ -62,7 +62,6 @@
                             <div class="page-header-icon"><i data-feather="users"></i></div>
                             Teman Kelas Kamu!
                         </h1>
-                        {{-- <div class="page-header-subtitle">Berisi Data Pendaftar dari Seluruh Siswa SMA</div> --}}
                     </div>
                 </div>
 

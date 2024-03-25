@@ -438,7 +438,7 @@
                                                                         name="gridRadios2" id="br6" value="option1"
                                                                         required>
                                                                     <label class="form-check-label" for="br6">
-                                                                        SAINTEK A
+                                                                        SAINTEK A (Kimia, Bio, Tik, Mipa, Fisika)
                                                                         <h9 style="color: red;"> ( * Tersedia )</h9>
                                                                     </label>
                                                                 </div>
@@ -447,7 +447,7 @@
                                                                         name="gridRadios2" id="br7" value="option2"
                                                                         required>
                                                                     <label class="form-check-label" for="br7">
-                                                                        SAINTEK B
+                                                                        SAINTEK B (Kimia, Bio, Tik, Mipa, Sos)
                                                                         <h9 style="color: red;"> ( * Tersedia )</h9>
                                                                     </label>
                                                                 </div>
@@ -456,7 +456,7 @@
                                                                         name="gridRadios2" id="br8" value="option3"
                                                                         required>
                                                                     <label class="form-check-label" for="br8">
-                                                                        SAINTEK C
+                                                                        SAINTEK C (Kimia, Bio, Tik, Mipa, Eko)
                                                                         <h9 style="color: red;"> ( * Tersedia )</h9>
                                                                     </label>
                                                                 </div>
@@ -465,7 +465,7 @@
                                                                         name="gridRadios2" id="br9" value="option4"
                                                                         required>
                                                                     <label class="form-check-label" for="br9">
-                                                                        SAINTEK D
+                                                                        SAINTEK D(Kimia, Bio, Tik, Sos, B Jpng )
                                                                         <h9 style="color: red;"> ( * Tersedia )</h9>
                                                                     </label>
                                                                 </div>

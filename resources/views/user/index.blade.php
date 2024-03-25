@@ -393,7 +393,7 @@
                                             <div class="card-body" style="text-align: center;">
                                                 <h5 class="card-title">IPA</h5>
                                                 <p class="card-text">Jurusan ipa tentang...</p>
-                                                <a class="btn btn-primary" href="Ipa.html">Daftar</a>
+                                                <a class="btn btn-primary" href="/Jurusan1">Daftar</a>
                                             </div>
                                         </div>
 
@@ -405,7 +405,7 @@
                                             <div class="card-body" style="text-align: center;">
                                                 <h5 class="card-title">IPS</h5>
                                                 <p class="card-text">Jurusan ips tentang....</p>
-                                                <a class="btn btn-primary" href="Ips.html">Daftar</a>
+                                                <a class="btn btn-primary" href="/Jurusan2">Daftar</a>
                                             </div>
                                         </div>
 
