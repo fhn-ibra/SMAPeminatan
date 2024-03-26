@@ -24,6 +24,7 @@ class GoogleController extends Controller
                 Auth::login($finduser);
                 return redirect('/pilihan');
             } else {
+                dd($user->user->hd);
                 $newuser = User::updateOrCreate([
                     'email' => $user->email,
                     'name' => $user->name,

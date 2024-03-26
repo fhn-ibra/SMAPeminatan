@@ -25,6 +25,13 @@ class AdminController extends Controller
         return view('admin.pendaftar', $data);
     }
 
+    public function pendaftarDelete(Request $request){
+        $siswa = Siswa::where('id', $request->id);
+        $siswa->delete();
+
+        return redirect()->route('pendaftar')->with(['modal' => true, 'message' => 'Data Berhasil di Hapus']);
+    }
+
     public function pendaftarExport(){
         return Excel::download(new PendaftarExport, 'pendaftar.xlsx');
     }
