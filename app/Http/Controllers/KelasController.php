@@ -46,7 +46,7 @@ class KelasController extends Controller
         return view('admin.IPS.detail', $data);
     }
 
-    public function ipaExport($id){
+    public function Export($id){
         $kelas = Paket::where('id', $id)->value('nama_kelas');
         $export = new DetailExport($id);
         return Excel::download($export , $kelas . '.xlsx');
@@ -57,5 +57,12 @@ class KelasController extends Controller
         $siswa->delete();
 
         return redirect('/ipa/' . $id)->with(['modal' => true, 'message' => 'Data Berhasil di Hapus']);
+    }
+
+    public function ipsDelete($id, Request $request){
+        $siswa = Siswa::where('id', $request->id);
+        $siswa->delete();
+
+        return redirect('/ips/' . $id)->with(['modal' => true, 'message' => 'Data Berhasil di Hapus']);
     }
 }
