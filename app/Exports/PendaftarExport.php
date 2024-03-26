@@ -13,7 +13,7 @@ class PendaftarExport implements FromView, ShouldAutoSize
     public function view(): View
     {
         return view('export.pendaftar', [
-            'data' => Siswa::all()
+            'data' => Siswa::orderBy('paket_id', 'asc')->orderBy('nama', 'desc')->get()
         ]);
     }
 

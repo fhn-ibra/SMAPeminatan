@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Paket;
 use App\Models\Siswa;
+use App\Exports\DetailExport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class KelasController extends Controller
 {
@@ -26,7 +28,8 @@ class KelasController extends Controller
         $data = [
             'data' => Siswa::where('paket_id', $id)->get(),
             'title' => Paket::where('id', $id)->value('nama_kelas'),
-            'paket' => Paket::where('id', $id)->value('nama_paket')
+            'paket' => Paket::where('id', $id)->value('nama_paket'),
+            'id' => $id
         ];
 
         return view('admin.IPA.detail', $data);
@@ -36,9 +39,16 @@ class KelasController extends Controller
         $data = [
             'data' => Siswa::where('paket_id', $id)->get(),
             'title' => Paket::where('id', $id)->value('nama_kelas'),
-            'paket' => Paket::where('id', $id)->value('nama_paket')
+            'paket' => Paket::where('id', $id)->value('nama_paket'),
+            'id' => $id
         ];
 
         return view('admin.IPS.detail', $data);
+    }
+
+    public function ipaExport($id){
+        $kelas = Paket::where('id', $id)->value('nama_kelas');
+        $export = new DetailExport($id);
+        return Excel::download($export , $kelas . '.xlsx');
     }
 }
