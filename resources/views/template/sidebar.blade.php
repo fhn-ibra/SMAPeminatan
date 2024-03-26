@@ -7,23 +7,23 @@
             <div class="sidenav-menu-heading">Dashboard
             </div>
 
-            <a class="nav-link" href="/dashboard">
+            <a class="nav-link {{ $title == 'Dashboard' ? 'active' : '' }}" href="/dashboard">
                 <div class="nav-link-icon"><i data-feather="activity"></i></div>
                 Dashboard
             </a>
 
-            <a class="nav-link" href="/pendaftar">
+            <a class="nav-link {{ $title == 'Pendaftar' ? 'active' : '' }}" href="/pendaftar">
                 <div class="nav-link-icon"><i data-feather="users"></i></div>
                 Pendaftar
             </a>
 
             <div class="sidenav-menu-heading">Kelas</div>
 
-            <a class="nav-link" href="/ipa">
+            <a class="nav-link {{ $title == 'Kelas IPA' ? 'active' : '' }}" href="/ipa">
                 <div class="nav-link-icon"><i class="fas fa-flask"></i></div>
                 IPA
             </a>
-            <a class="nav-link" href="/ips">
+            <a class="nav-link {{ $title == 'Kelas IPS' ? 'active' : '' }}" href="/ips">
                 <div class="nav-link-icon"><i data-feather="compass"></i></div>
                 IPS
             </a>
