@@ -21,7 +21,7 @@
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1">
                                 <div class="small fw-bold text-primary mb-1">Jumlah Pendaftar</div>
-                                <div class="h5">xxx</div>
+                                <div class="h5">{{ $pendaftar }}</div>
                             </div>
                             <div class="ms-2"><i class="fas fa-clipboard-list fa-2x text-gray-200"></i></div>
                         </div>
@@ -34,7 +34,7 @@
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1">
                                 <div class="small fw-bold text-primary mb-1">Jumlah IPA</div>
-                                <div class="h5">xxx</div>
+                                <div class="h5">{{ $ipa }}</div>
                             </div>
                             <div class="ms-2"><i class="fas fa-flask fa-2x text-gray-200"></i></div>
                         </div>
@@ -47,7 +47,7 @@
                         <div class="d-flex align-items-center">
                             <div class="flex-grow-1">
                                 <div class="small fw-bold text-primary mb-1">Jumlah IPS</div>
-                                <div class="h5">xxx</div>
+                                <div class="h5">{{ $ips }}</div>
                             </div>
                             <div class="ms-2"><i class="fas fa-compass fa-2x text-gray-200"></i></div>
                         </div>
@@ -68,14 +68,14 @@
                                             <i class="fas fa-circle fa-sm me-1 text-blue"></i>
                                             IPA
                                         </div>
-                                        <div class="fw-500 text-dark">55%</div>
+                                        <div class="fw-500 text-dark">{{ round(($ips/$pendaftar) * 100) }}%</div>
                                     </div>
                                     <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
                                         <div class="me-3">
                                             <i class="fas fa-circle fa-sm me-1 text-purple"></i>
                                             IPS
                                         </div>
-                                        <div class="fw-500 text-dark">45%</div>
+                                        <div class="fw-500 text-dark">{{ round(($ipa/$pendaftar) * 100) }}%</div>
                                     </div>
                                 </div>
                             </div>
@@ -106,13 +106,13 @@ var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
     type: "bar",
     data: {
-        labels: ["IPA 1", "IPA 2", "IPA 3", "IPS 1", "IPS 2", "IPS 3"],
+        labels: {!! $kelas !!},
         datasets: [{
             label: "Kelas",
             backgroundColor: "rgba(0, 97, 242, 1)",
             hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
             borderColor: "#4e73df",
-            data: [38, 40, 37, 36, 39, 40],
+            data: {!! $data !!},
             maxBarThickness: 20
         }]
     },
@@ -153,9 +153,9 @@ var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
     type: "doughnut",
     data: {
-        labels: ["Direct", "Referral"],
+        labels: ["IPA", 'IPS'],
         datasets: [{
-            data: [55, 45],
+            data: [{{ round(($ipa/$pendaftar) * 100) }}, {{ round(($ips/$pendaftar) * 100) }}],
             backgroundColor: [
                 "rgba(0, 97, 242, 1)",
                 "rgba(0, 172, 105, 1)",

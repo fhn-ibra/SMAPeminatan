@@ -4,13 +4,30 @@ namespace App\Http\Controllers;
 
 use App\Exports\PendaftarExport;
 use App\Models\Siswa;
+use App\Models\Paket;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
     public function dashboard(){
+
+        $array = [];
+        $kelas = Paket::all();
+        
+        foreach($kelas as $d){
+            $siswa = Siswa::where('paket_id', $d->id)->count();
+
+            $array[] = $siswa;
+        }
+
+
         $data = [
+            'pendaftar' => Siswa::count(),
+            'ipa' => Siswa::where('paket_id', '<=', '200')->count(),
+            'ips' => Siswa::where('paket_id', '>=', 200)->count(),
+            'kelas' => json_encode(Paket::pluck('nama_kelas')),
+            'data' => json_encode($array),
             'title' => 'Dashboard',
             'footer' => true
         ];
