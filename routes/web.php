@@ -43,6 +43,7 @@ Route::get('/pendaftar/export', [AdminController::class, 'pendaftarExport']);
 
 Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
 Route::get('/ipa/{id}', [KelasController::class, 'ipaDetail'])->name('ipa.detail');
+Route::delete('/ipa/delete/{id}', [KelasController::class, 'ipaDelete'])->name('ipa.delete');
 Route::get('/ipa/export/{id}', [KelasController::class, 'ipaExport']);
 
 Route::get('/ips', [KelasController::class, 'ips'])->name('ips');

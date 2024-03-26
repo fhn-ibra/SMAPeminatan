@@ -51,4 +51,11 @@ class KelasController extends Controller
         $export = new DetailExport($id);
         return Excel::download($export , $kelas . '.xlsx');
     }
+
+    public function ipaDelete($id, Request $request){
+        $siswa = Siswa::where('id', $request->id);
+        $siswa->delete();
+
+        return redirect('/ipa/' . $id)->with(['modal' => true, 'message' => 'Data Berhasil di Hapus']);
+    }
 }
