@@ -16,8 +16,13 @@ use App\Http\Controllers\LoginController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/', [LoginController::class, 'index'])->name('login');
-Route::post('/proses', [LoginController::class, 'login'])->name('proses');
+
+Route::group(['middleware' => ['guest']], function(){
+    Route::get('/', [LoginController::class, 'index'])->name('login');
+    Route::post('/proses', [LoginController::class, 'login'])->name('proses');
+});
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/UserLog', function(){
     return view('user.dashboard.index', ['title' => 'User']);

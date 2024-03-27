@@ -8,11 +8,22 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     public function index(){
-        return view('admin.login');
+        return view('login');
     }
     
     public function login(Request $request){
-        dd($request->all());
+        $credentials = $request->validate([
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->route('dashboard');
+        }
+
+        return redirect()->route('login')->with(['error' => true]);
+        
     }
 
     public function user(){
@@ -20,12 +31,7 @@ class LoginController extends Controller
     }
 
     public function logout(){
-        if(Auth::user()->level == 'Admin'){
-            Auth::logout();
-            return redirect()->route('admin');
-        } else {
             Auth::logout();
             return redirect()->route('login');
-        }
     }
 }
