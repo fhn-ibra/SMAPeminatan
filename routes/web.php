@@ -37,7 +37,7 @@ Route::get('/Jurusan2', function(){
     return view('user.ips');
 });
 Route::get('/tes', function(){
-    return view('tes');
+    return view('user.dashboard');
 });
 
 
