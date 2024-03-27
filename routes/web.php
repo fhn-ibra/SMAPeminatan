@@ -1,10 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\KelasController;
-use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\GoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,25 +21,31 @@ use App\Http\Controllers\LoginController;
 Route::group(['middleware' => ['guest']], function(){
     Route::get('/', [LoginController::class, 'index'])->name('login');
     Route::post('/proses', [LoginController::class, 'login'])->name('proses');
+
+    Route::get('/login', function(){
+        return redirect('/');
+    });
 });
 
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/UserLog', function(){
-    return view('user.dashboard.index', ['title' => 'User']);
-});
-Route::get('/form', function(){
-    return view('user.index');
-});
-Route::get('/Jurusan1', function(){
-    return view('user.ipa');
-});
-Route::get('/Jurusan2', function(){
-    return view('user.ips');
-});
-Route::get('/tes', function(){
-    return view('user.dashboard');
-});
+
+// Route::get('/user', function(){
+//     return view('user.dashboard');
+// });
+Route::get('/form', [UserController::class, 'form'])->name('form');
+Route::get('/user', [UserController::class, 'user'])->name('user');
+
+Route::get('/form/ipa', [UserController::class, 'ipa'])->name('form.ipa');
+Route::get('/form/ips', [UserController::class, 'ips'])->name('form.ips');
+// Route::get('/Jurusan1', function(){
+//     return view('user.ipa');
+// });
+// Route::get('/Jurusan2', function(){
+//     return view('user.ips');
+// });
+// Route::get('/tes', function(){
+//     return view('user.dashboard');
+// });
 
 
 Route::group(['middleware' => ['auth']], function(){
@@ -56,6 +63,8 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/ips', [KelasController::class, 'ips'])->name('ips');
     Route::get('/ips/{id}', [KelasController::class, 'ipsDetail'])->name('ips.detail');
     Route::delete('/ips/delete/{id}', [KelasController::class, 'ipsDelete'])->name('ips.delete');
+
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });
 
 

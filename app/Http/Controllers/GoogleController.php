@@ -22,7 +22,7 @@ class GoogleController extends Controller
 
             if($finduser){
                 Auth::login($finduser);
-                return redirect('/tes');
+                return redirect('/form');
             } else {
                 dd($user->user->hd);
                 $newuser = User::updateOrCreate([
