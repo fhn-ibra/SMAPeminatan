@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,10 @@ use App\Http\Controllers\AdminController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/', [LoginController::class, 'index'])->name('login');
+// Route::get('/login', [LoginController::class, 'index'])->name('admin');
+Route::post('/proses', [LoginController::class, 'login'])->name('proses');
+
 Route::get('/UserLog', function(){
     return view('user.dashboard.index');
 });
@@ -27,29 +32,25 @@ Route::get('/Jurusan1', function(){
 Route::get('/Jurusan2', function(){
     return view('user.ips');
 });
-Route::get('/', function () {
-    return view('user.login');
+
+
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/pendaftar', [AdminController::class, 'pendaftar'])->name('pendaftar');
+    Route::delete('/pendaftar/delete', [AdminController::class, 'pendaftarDelete'])->name('pendaftar.delete');
+    Route::get('/pendaftar/export', [AdminController::class, 'pendaftarExport']);
+    
+    Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
+    Route::get('/ipa/{id}', [KelasController::class, 'ipaDetail'])->name('ipa.detail');
+    Route::delete('/ipa/delete/{id}', [KelasController::class, 'ipaDelete'])->name('ipa.delete');
+    
+    Route::get('/kelas/export/{id}', [KelasController::class, 'Export']);
+    
+    Route::get('/ips', [KelasController::class, 'ips'])->name('ips');
+    Route::get('/ips/{id}', [KelasController::class, 'ipsDetail'])->name('ips.detail');
+    Route::delete('/ips/delete/{id}', [KelasController::class, 'ipsDelete'])->name('ips.delete');
 });
 
-Route::get('/login', function () {
-    return view('admin.login');
-});
-
-
-Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
-Route::get('/pendaftar', [AdminController::class, 'pendaftar'])->name('pendaftar');
-Route::delete('/pendaftar/delete', [AdminController::class, 'pendaftarDelete'])->name('pendaftar.delete');
-Route::get('/pendaftar/export', [AdminController::class, 'pendaftarExport']);
-
-Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
-Route::get('/ipa/{id}', [KelasController::class, 'ipaDetail'])->name('ipa.detail');
-Route::delete('/ipa/delete/{id}', [KelasController::class, 'ipaDelete'])->name('ipa.delete');
-
-Route::get('/kelas/export/{id}', [KelasController::class, 'Export']);
-
-Route::get('/ips', [KelasController::class, 'ips'])->name('ips');
-Route::get('/ips/{id}', [KelasController::class, 'ipsDetail'])->name('ips.detail');
-Route::delete('/ips/delete/{id}', [KelasController::class, 'ipsDelete'])->name('ips.delete');
 
 
 
