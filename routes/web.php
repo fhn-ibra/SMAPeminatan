@@ -17,13 +17,12 @@ use App\Http\Controllers\LoginController;
 |
 */
 Route::get('/', [LoginController::class, 'index'])->name('login');
-// Route::get('/login', [LoginController::class, 'index'])->name('admin');
 Route::post('/proses', [LoginController::class, 'login'])->name('proses');
 
 Route::get('/UserLog', function(){
-    return view('user.dashboard.index');
+    return view('user.dashboard.index', ['title' => 'User']);
 });
-Route::get('/pilihan', function(){
+Route::get('/form', function(){
     return view('user.index');
 });
 Route::get('/Jurusan1', function(){
@@ -31,6 +30,9 @@ Route::get('/Jurusan1', function(){
 });
 Route::get('/Jurusan2', function(){
     return view('user.ips');
+});
+Route::get('/tes', function(){
+    return view('tes');
 });
 
 
