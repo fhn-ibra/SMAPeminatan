@@ -49,70 +49,74 @@
                                 <div class="small fw-bold text-primary mb-1">Jumlah IPS</div>
                                 <div class="h5">{{ $ips }}</div>
                             </div>
-                            <div class="ms-2"><i class="fas fa-compass fa-2x text-gray-200"></i></div>
+                            <div class="ms-2"><i class="fas fa-earth-asia fa-2x text-gray-200"></i></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-                <div class="row">
-                    <div class="col-lg-4 mb-4">
-                        <div class="card h-100">
-                            <div class="card-header">Persentase Pendaftar</div>
-                            <div class="card-body">
-                                <div class="chart-pie mb-4"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
-                                <div class="list-group list-group-flush">
-                                    <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
-                                        <div class="me-3">
-                                            <i class="fas fa-circle fa-sm me-1 text-blue"></i>
-                                            IPA
-                                        </div>
-                                        <div class="fw-500 text-dark">{{ round(($ips/$pendaftar) * 100) }}%</div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-header">Persentase Pendaftar</div>
+                        <div class="card-body">
+                            <div class="chart-pie mb-4"><canvas id="myPieChart" width="100%" height="50"></canvas></div>
+                            <div class="list-group list-group-flush">
+                                <div
+                                    class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
+                                    <div class="me-3">
+                                        <i class="fas fa-circle fa-sm me-1 text-blue"></i>
+                                        IPA
                                     </div>
-                                    <div class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
-                                        <div class="me-3">
-                                            <i class="fas fa-circle fa-sm me-1 text-purple"></i>
-                                            IPS
-                                        </div>
-                                        <div class="fw-500 text-dark">{{ round(($ipa/$pendaftar) * 100) }}%</div>
+                                    <div class="fw-500 text-dark">{{ round(($ips/$pendaftar) * 100) }}%</div>
+                                </div>
+                                <div
+                                    class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
+                                    <div class="me-3">
+                                        <i class="fas fa-circle fa-sm me-1 text-purple"></i>
+                                        IPS
                                     </div>
+                                    <div class="fw-500 text-dark">{{ round(($ipa/$pendaftar) * 100) }}%</div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-lg-8 mb-4">
-                        <!-- Bar chart example-->
-                        <div class="card h-100">
-                            <div class="card-header">Pembagian Kelas</div>
-                            <div class="card-body d-flex flex-column justify-content-center">
-                                <div class="chart-bar"><canvas id="myBarChart" width="100%" height="30"></canvas></div>
-                            </div>
+                <div class="col-lg-8 mb-4">
+                    <!-- Bar chart example-->
+                    <div class="card h-100">
+                        <div class="card-header">Pembagian Kelas</div>
+                        <div class="card-body d-flex flex-column justify-content-center">
+                            <div class="chart-bar"><canvas id="myBarChart" width="100%" height="30"></canvas></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 </main>
 @endsection
 
 @push('js')
-    <script>
-
-
+<script>
 var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
     type: "bar",
     data: {
-        labels: {!! $kelas !!},
+        labels: {
+            !!$kelas!!
+        },
         datasets: [{
             label: "Kelas",
             backgroundColor: "rgba(0, 97, 242, 1)",
             hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
             borderColor: "#4e73df",
-            data: {!! $data !!},
+            data: {
+                !!$data!!
+            },
             maxBarThickness: 20
         }]
     },
@@ -144,10 +148,9 @@ var myBarChart = new Chart(ctx, {
         },
     }
 });
-    </script>
+</script>
 
-    <script>
-
+<script>
 // Pie Chart Example
 var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
@@ -155,7 +158,15 @@ var myPieChart = new Chart(ctx, {
     data: {
         labels: ["IPA", 'IPS'],
         datasets: [{
-            data: [{{ round(($ipa/$pendaftar) * 100) }}, {{ round(($ips/$pendaftar) * 100) }}],
+            data: [{
+                {
+                    round(($ipa / $pendaftar) * 100)
+                }
+            }, {
+                {
+                    round(($ips / $pendaftar) * 100)
+                }
+            }],
             backgroundColor: [
                 "rgba(0, 97, 242, 1)",
                 "rgba(0, 172, 105, 1)",
@@ -187,5 +198,5 @@ var myPieChart = new Chart(ctx, {
         cutoutPercentage: 80
     }
 });
-    </script>
+</script>
 @endpush

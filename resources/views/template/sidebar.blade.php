@@ -24,7 +24,7 @@
                 IPA
             </a>
             <a class="nav-link {{ $title == 'Kelas IPS' ? 'active' : '' }}" href="/ips">
-                <div class="nav-link-icon"><i data-feather="compass"></i></div>
+                <div class="nav-link-icon"><i class="fa-solid fa-earth-asia"></i></div>
                 IPS
             </a>
 
