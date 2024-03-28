@@ -28,6 +28,8 @@
         <div class="container-xl px-4 mt-n10">
             <div class="card card-header-actions">
                 <div class="card-header">
+                    <button class="btn btn-sm btn-primary-soft text-primary" type="button" data-bs-toggle="modal" data-bs-target="#editModal"><b><i class="fa-solid fa-pen me-1"></i>Edit Jumlah Kursi</b></button>
+
                     <a class="btn btn-sm btn-primary-soft text-primary" href="/kelas/export/{{ $id }}"><b><i
                                 class="fa-solid fa-file-export me-1"></i> Export Data</b></a>
                 </div>
@@ -134,10 +136,38 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                     </table>
                 </div>
             </div>
     </main>
+
+    <div class="modal fade" id="editModal" tabindex="-1" role="dialog"
+    aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Kursi</h5>
+                <button class="btn-close" type="button" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/ipa/edit/{{ $id }}" method="post">
+                    @csrf
+                    <div class="form-group mb-2">
+                        <label for="exampleInputPassword1">Stok</label>
+                        <input type="text" class="form-control form-control-sm mt-2" name="stok" value="{{ $stok }}">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-sm btn-secondary" type="button"
+                    data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-sm btn-primary" type="submit">Ya</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
 @endsection
 
 @push('js')

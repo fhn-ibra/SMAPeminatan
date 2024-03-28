@@ -29,6 +29,7 @@ class KelasController extends Controller
             'data' => Siswa::where('paket_id', $id)->get(),
             'title' => Paket::where('id', $id)->value('nama_kelas'),
             'paket' => Paket::where('id', $id)->value('nama_paket'),
+            'stok' => Paket::where('id', $id)->value('stok'),
             'id' => $id
         ];
 
@@ -40,6 +41,7 @@ class KelasController extends Controller
             'data' => Siswa::where('paket_id', $id)->get(),
             'title' => Paket::where('id', $id)->value('nama_kelas'),
             'paket' => Paket::where('id', $id)->value('nama_paket'),
+            'stok' => Paket::where('id', $id)->value('stok'),
             'id' => $id
         ];
 
@@ -64,5 +66,21 @@ class KelasController extends Controller
         $siswa->delete();
 
         return redirect('/ips/' . $id)->with(['modal' => true, 'message' => 'Data Berhasil di Hapus']);
+    }
+
+    public function ipaEdit($id, Request $request){
+        $paket = Paket::find($id);
+        $paket->stok = $request->stok;
+        $paket->save();
+
+        return redirect('/ipa/' . $id)->with(['modal' => true, 'message' => 'Data Berhasil di Edit']);
+    }
+
+    public function ipsEdit($id, Request $request){
+        $paket = Paket::find($id);
+        $paket->stok = $request->stok;
+        $paket->save();
+
+        return redirect('/ips/' . $id)->with(['modal' => true, 'message' => 'Data Berhasil di Edit']);
     }
 }

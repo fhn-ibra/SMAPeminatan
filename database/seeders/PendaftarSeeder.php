@@ -16,15 +16,15 @@ class PendaftarSeeder extends Seeder
         $pendaftar = [[
             'user_id' => 1,
             'nama' => 'Farhan Ibra Andhika',
-            'asal_kelas' => 'X 1',
+            'asal_kelas' => 'X-1',
             'kampus_tujuan' => 'Universitas Indonesia',
             'fakultas_tujuan' => 'Ilmu Komputer',
             'alasan' => 'Kampus yang dekat dari Rumah',
             'paket_id' => 111,
         ],[
-            'user_id' => 1,
+            'user_id' => 2,
             'nama' => 'Muhammad Erlangga Putra Witanto',
-            'asal_kelas' => 'X 2',
+            'asal_kelas' => 'X-2',
             'kampus_tujuan' => 'Universitas Gajah Mada',
             'fakultas_tujuan' => 'Ilmu Komputer',
             'alasan' => 'Suka yang ada Gajahnya',

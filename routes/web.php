@@ -27,23 +27,25 @@ Route::group(['middleware' => ['guest']], function(){
     });
 });
 
-
-
-
-
-
 Route::group(['middleware' => ['auth']], function(){
+  //------------------Universal Route------------------
+  Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+  //------------------End Universal Route------------------
+});
+
+
+Route::group(['middleware' => ['user']], function(){
     //------------------User Route------------------
     Route::get('/form', [UserController::class, 'form'])->name('form');
-
+    
     Route::get('/user', [UserController::class, 'user'])->name('user');
-
+    
     Route::get('/form/ipa', [UserController::class, 'ipa'])->name('form.ipa');
     Route::get('/form/ipa/register/{id}', [UserController::class, 'pilihanIpa'])->name('pilihan.ipa');
-
+    
     Route::get('/form/ips', [UserController::class, 'ips'])->name('form.ips');
     Route::get('/form/ips/register/{id}', [UserController::class, 'pilihanIps'])->name('pilihan.ips');
-
+    
     Route::get('/form/ipa/register', [UserController::class, 'registerIpa'])->name('register.ipa');
     Route::get('/form/ips/register', [UserController::class, 'registerIps'])->name('register.ips');
 
@@ -58,31 +60,28 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/user/kelas/{id}', [UserController::class, 'detailKelas']);
     //------------------End User Route------------------
     
-    //------------------Universal Route------------------
-    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-    //------------------End Universal Route------------------
-
-    Route::group(['middleware' => ['level:Admin']], function(){
-        //------------------Admin & Guru Route------------------
-        Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
-        Route::get('/pendaftar', [AdminController::class, 'pendaftar'])->name('pendaftar');
-        Route::delete('/pendaftar/delete', [AdminController::class, 'pendaftarDelete'])->name('pendaftar.delete');
-        Route::get('/pendaftar/export', [AdminController::class, 'pendaftarExport']);
-        
-        Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
-        Route::get('/ipa/{id}', [KelasController::class, 'ipaDetail'])->name('ipa.detail');
-        Route::delete('/ipa/delete/{id}', [KelasController::class, 'ipaDelete'])->name('ipa.delete');
-        
-        Route::get('/kelas/export/{id}', [KelasController::class, 'Export']);
-        
-        Route::get('/ips', [KelasController::class, 'ips'])->name('ips');
-        Route::get('/ips/{id}', [KelasController::class, 'ipsDetail'])->name('ips.detail');
-        Route::delete('/ips/delete/{id}', [KelasController::class, 'ipsDelete'])->name('ips.delete');
-        //------------------End Admin & Guru Route------------------
-    });    
+  
 });
 
-
+Route::group(['middleware' => ['level']], function(){
+    //------------------Admin & Guru Route------------------
+    Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/pendaftar', [AdminController::class, 'pendaftar'])->name('pendaftar');
+    Route::delete('/pendaftar/delete', [AdminController::class, 'pendaftarDelete'])->name('pendaftar.delete');
+    Route::get('/pendaftar/export', [AdminController::class, 'pendaftarExport']);
+    
+    Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
+    Route::get('/ipa/{id}', [KelasController::class, 'ipaDetail'])->name('ipa.detail');
+    Route::post('/ipa/edit/{id}', [KelasController::class, 'ipaEdit']);
+    Route::delete('/ipa/delete/{id}', [KelasController::class, 'ipaDelete'])->name('ipa.delete');
+    
+    Route::get('/kelas/export/{id}', [KelasController::class, 'Export']);
+    
+    Route::get('/ips', [KelasController::class, 'ips'])->name('ips');
+    Route::get('/ips/{id}', [KelasController::class, 'ipsDetail'])->name('ips.detail');
+    Route::delete('/ips/delete/{id}', [KelasController::class, 'ipsDelete'])->name('ips.delete');
+    //------------------End Admin & Guru Route------------------
+});    
 
 //------------------Google Route------------------
 Route::get('auth/google', [GoogleController::class, 'redirectGoogle'])->name('auth.google');
