@@ -22,33 +22,37 @@
 
 
 
-                    <a class="nav-item nav-link " href="/form/ipa/register/110">
+                    <a class="nav-item nav-link {{ $A <= 0 ? 'disabled' : '' }}" href="/form/ipa/register/110">
                         <div class="wizard-step-icon">A</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name">SAINTEK A</div>
-                            <div class="wizard-step-text-details">Fisika, Kimia, Bio, Mipa, TIK</div>
+                            <div class="wizard-step-text-details">Fisika, Kimia, Bio, MIPA, TIK</div>
+                            <div class="wizard-step-text-name mt-2"><div class="badge {{ $A <= 0 ? 'bg-danger' : 'bg-primary' }} text-white rounded-pill">{{ $A }} Kursi Tersedia</div></div>
                         </div>
                     </a>
                     <!-- Wizard navigation item 2-->
-                    <a class="nav-item nav-link " href="/form/ipa/register/120">
+                    <a class="nav-item nav-link {{ $B <= 0 ? 'disabled' : '' }}" href="/form/ipa/register/120">
                         <div class="wizard-step-icon">B</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name"> SAINTEK B</div>
-                            <div class="wizard-step-text-details">Kimia, Bio, Mipa, Sos, TIK</div>
+                            <div class="wizard-step-text-details">Kimia, Bio, MIPA, Sos, TIK</div>
+                            <div class="wizard-step-text-name mt-2"><div class="badge {{ $B <= 0 ? 'bg-danger' : 'bg-primary' }} text-white rounded-pill">{{ $B }} Kursi Tersedia</div></div>
                         </div>
                     </a>
-                    <a class="nav-item nav-link " href="/form/ipa/register/130">
+                    <a class="nav-item nav-link {{ $C <= 0 ? 'disabled' : '' }}" href="/form/ipa/register/130">
                         <div class="wizard-step-icon">C</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name">SAINTEK C</div>
-                            <div class="wizard-step-text-details">Kimia, TIK, Bio, Mipa, Eko</div>
+                            <div class="wizard-step-text-details">Kimia, TIK, Bio, MIPA, Eko</div>
+                            <div class="wizard-step-text-name mt-2"><div class="badge {{ $C <= 0 ? 'bg-danger' : 'bg-primary' }} text-white rounded-pill">{{ $C }} Kursi Tersedia</div></div>
                         </div>
                     </a>
-                    <a class="nav-item nav-link " href="/form/ipa/register/140">
+                    <a class="nav-item nav-link {{ $C <= 0 ? 'disabled' : '' }}" href="/form/ipa/register/140">
                         <div class="wizard-step-icon">D</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name">SAINTEK D</div>
                             <div class="wizard-step-text-details">Bhs Jpg, Kimia, Bio, Sos, TIK</div>
+                            <div class="wizard-step-text-name mt-2"><div class="badge {{ $D <= 0 ? 'bg-danger' : 'bg-primary' }} text-white rounded-pill">{{ $D }} Kursi Tersedia</div></div>
                         </div>
                     </a>
 

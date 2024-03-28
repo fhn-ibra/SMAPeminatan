@@ -21,26 +21,29 @@
                     <!-- Wizard navigation item 1-->
 
 
-                        <a class="nav-item nav-link" type="submit" href="/form/ips/register/210">
+                        <a class="nav-item nav-link {{ $E <= 0 ? 'disabled' : '' }}" type="submit" href="/form/ips/register/210">
                         <div class="wizard-step-icon bg-secondary">E</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name text-secondary">SOSHUM E</div>
                             <div class="wizard-step-text-details">Geo, Sosio, Eko, Bhs Jpg, TIK</div>
+                            <div class="wizard-step-text-name mt-2"><div class="badge {{ $E <= 0 ? 'bg-danger' : 'bg-secondary' }} text-white rounded-pill">{{ $E }} Kursi Tersedia</div></div>
                         </div>
                     </a>
                     <!-- Wizard navigation item 2-->
-                    <a class="nav-item nav-link " href="/form/ips/register/220">
+                    <a class="nav-item nav-link {{ $F <= 0 ? 'disabled' : '' }} " href="/form/ips/register/220">
                         <div class="wizard-step-icon bg-secondary">F</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name text-secondary"> SOSHUM F</div>
                             <div class="wizard-step-text-details">Geo, Sosio, Eko, Bio, TIK</div>
+                            <div class="wizard-step-text-name mt-2"><div class="badge {{ $F <= 0 ? 'bg-danger' : 'bg-secondary' }} text-white rounded-pill">{{ $F }} Kursi Tersedia</div></div>
                         </div>
                     </a>
-                    <a class="nav-item nav-link " href="/form/ips/register/230">
+                    <a class="nav-item nav-link {{ $G <= 0 ? 'disabled' : '' }}" href="/form/ips/register/230">
                         <div class="wizard-step-icon bg-secondary">G</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name text-secondary">SOSHUM G</div>
                             <div class="wizard-step-text-details">Geo, Sosio, Eko, Kimia, TIK</div>
+                            <div class="wizard-step-text-name mt-2"><div class="badge {{ $G <= 0 ? 'bg-danger' : 'bg-secondary' }} text-white rounded-pill">{{ $G }} Kursi Tersedia</div></div>
                         </div>
                     </a>
                 </div>

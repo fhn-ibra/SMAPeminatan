@@ -29,12 +29,25 @@ class UserController extends Controller
 
     public function ipa()
     {
-        return view('user.IPA.index', ['title' => 'IPA']);
+        $data = [
+            'title' => 'IPA',
+            'A' => Paket::where('nama_paket', 'SAINTEK A')->sum('stok'),
+            'B' => Paket::where('nama_paket', 'SAINTEK B')->sum('stok'),
+            'C' => Paket::where('nama_paket', 'SAINTEK C')->sum('stok'),
+            'D' => Paket::where('nama_paket', 'SAINTEK D')->sum('stok'),
+        ];
+        return view('user.IPA.index', $data);
     }
-
+    
     public function ips()
     {
-        return view('user.IPS.index', ['title' => 'IPS']);
+        $data = [
+            'title' => 'IPS',
+            'E' => Paket::where('nama_paket', 'SOSHUM E')->sum('stok'),
+            'F' => Paket::where('nama_paket', 'SOSHUM F')->sum('stok'),
+            'G' => Paket::where('nama_paket', 'SOSHUM G')->sum('stok'),
+        ];
+        return view('user.IPS.index', $data);
     }
 
     public function pilihanIpa($id)

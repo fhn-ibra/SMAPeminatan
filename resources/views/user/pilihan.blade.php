@@ -10,14 +10,14 @@
                     <div class="card-body px-5 pt-5 d-flex flex-column">
                         <div>
                             <div class="h3 text-primary">IPA</div>
-                            <p class="text-muted mb-4">Ilmu Pengetahuan Alam</p>
+                            <p class="text-muted mb-4">IPA adalah bidang ilmu yang mempelajari tentang alam dan bagaimana alam bekerja.</p>
                         </div>
                         <div class="icons-org-create align-items-center mx-auto mt-auto">
                             <i class="icon-users fas fa-flask"></i>
                         </div>
                     </div>
                     <div class="card-footer bg-transparent px-5 py-4">
-                        <div class="small text-center"><a class="btn btn-block btn-primary" href="/form/ipa">Pilih</a>
+                        <div class="small text-center"><a class="btn btn-block btn-primary" href="/form/ipa">Daftar</a>
                         </div>
                     </div>
                 </div>
@@ -28,14 +28,14 @@
                     <div class="card-body px-5 pt-5 d-flex flex-column align-items-between">
                         <div>
                             <div class="h3 text-secondary">IPS</div>
-                            <p class="text-muted mb-4">Ilmu Pengetahuan Sosial</p>
+                            <p class="text-muted mb-4">IPS adalah bidang ilmu yang mempelajari tentang manusia dan masyarakat.</p>
                         </div>
                         <div class="icons-org-join align-items-center mx-auto">
                             <i class="icon-user  fa-solid fa-earth-asia"></i>
                         </div>
                     </div>
                     <div class="card-footer bg-transparent px-5 py-4">
-                        <div class="small text-center"><a class="btn btn-block btn-secondary" href="/form/ips">Pilih</a>
+                        <div class="small text-center"><a class="btn btn-block btn-secondary" href="/form/ips">Daftar</a>
                         </div>
                     </div>
                 </div>
