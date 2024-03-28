@@ -39,9 +39,7 @@
                         <img class="dropdown-user-img" src="../../img/user.png" />
                         <div class="dropdown-user-details">
                             <div class="dropdown-user-details-name">{{ Auth::user()->name }}</div>
-                            <div class="dropdown-user-details-email"><a href=""
-                                    class="__cf_email__"
-                                    data-cfemail="156379607b7455747a793b767a78">{{ Auth::user()->email }}</a>
+                            <div class="dropdown-user-details-email"><a href="">{{ Auth::user()->email }}</a>
                             </div>
                         </div>
                     </h6>

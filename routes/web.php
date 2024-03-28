@@ -57,27 +57,29 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/user/kelas', [UserController::class, 'kelas'])->name('kelas');
     Route::get('/user/kelas/{id}', [UserController::class, 'detailKelas']);
     //------------------End User Route------------------
-
-    //------------------Admin & Guru Route------------------
-    Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
-    Route::get('/pendaftar', [AdminController::class, 'pendaftar'])->name('pendaftar');
-    Route::delete('/pendaftar/delete', [AdminController::class, 'pendaftarDelete'])->name('pendaftar.delete');
-    Route::get('/pendaftar/export', [AdminController::class, 'pendaftarExport']);
     
-    Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
-    Route::get('/ipa/{id}', [KelasController::class, 'ipaDetail'])->name('ipa.detail');
-    Route::delete('/ipa/delete/{id}', [KelasController::class, 'ipaDelete'])->name('ipa.delete');
-    
-    Route::get('/kelas/export/{id}', [KelasController::class, 'Export']);
-    
-    Route::get('/ips', [KelasController::class, 'ips'])->name('ips');
-    Route::get('/ips/{id}', [KelasController::class, 'ipsDetail'])->name('ips.detail');
-    Route::delete('/ips/delete/{id}', [KelasController::class, 'ipsDelete'])->name('ips.delete');
-    //------------------End Admin & Guru Route------------------
-
     //------------------Universal Route------------------
     Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
     //------------------End Universal Route------------------
+
+    Route::group(['middleware' => ['level:Admin']], function(){
+        //------------------Admin & Guru Route------------------
+        Route::get('/dashboard',[AdminController::class, 'dashboard'])->name('dashboard');
+        Route::get('/pendaftar', [AdminController::class, 'pendaftar'])->name('pendaftar');
+        Route::delete('/pendaftar/delete', [AdminController::class, 'pendaftarDelete'])->name('pendaftar.delete');
+        Route::get('/pendaftar/export', [AdminController::class, 'pendaftarExport']);
+        
+        Route::get('/ipa', [KelasController::class, 'ipa'])->name('ipa');
+        Route::get('/ipa/{id}', [KelasController::class, 'ipaDetail'])->name('ipa.detail');
+        Route::delete('/ipa/delete/{id}', [KelasController::class, 'ipaDelete'])->name('ipa.delete');
+        
+        Route::get('/kelas/export/{id}', [KelasController::class, 'Export']);
+        
+        Route::get('/ips', [KelasController::class, 'ips'])->name('ips');
+        Route::get('/ips/{id}', [KelasController::class, 'ipsDetail'])->name('ips.detail');
+        Route::delete('/ips/delete/{id}', [KelasController::class, 'ipsDelete'])->name('ips.delete');
+        //------------------End Admin & Guru Route------------------
+    });    
 });
 
 
