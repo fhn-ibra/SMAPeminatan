@@ -28,8 +28,9 @@
         <div class="container-xl px-4 mt-n10">
             <div class="card card-header-actions">
                 <div class="card-header">
+                    @if(Auth::user()->level == 'Admin')
                     <button class="btn btn-sm btn-primary-soft text-primary" type="button" data-bs-toggle="modal" data-bs-target="#editModal"><b><i class="fa-solid fa-pen me-1"></i>Edit Jumlah Kursi</b></button>
-
+                    @endif
                     <a class="btn btn-sm btn-primary-soft text-primary" href="/kelas/export/{{ $id }}"><b><i
                                 class="fa-solid fa-file-export me-1"></i> Export Data</b></a>
                 </div>
@@ -75,13 +76,17 @@
                                             data-bs-toggle="modal" id="detail" data-bs-target="#detailModal"
                                             data-email="{{ $item->user->email }}" data-create="{{ $item->created_at }}"><i
                                                 data-feather="list"></i></button>
+                                                @if(Auth::user()->level == 'Admin')
                                         <button type="button" class="btn btn-datatable btn-icon btn-transparent-dark"
                                             data-bs-toggle="modal" data-bs-target="#deleteModal" id="delete"
                                             data-id='{{ $item->id }}'><i class="fa-solid fa-trash"></i></button>
+                                            @endif
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
+
+                        @if(Auth::user()->level == 'Admin')
                         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
                             aria-labelledby="mySmallModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
@@ -107,6 +112,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
 
                         </tbody>
                         <div class="modal fade" id="detailModal" tabindex="-1" role="dialog"
@@ -142,6 +148,7 @@
             </div>
     </main>
 
+    @if(Auth::user()->level == 'Admin')
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog"
     aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
@@ -168,6 +175,7 @@
         </div>
     </div>
 </div>
+@endif
 @endsection
 
 @push('js')

@@ -7,10 +7,10 @@
         <!-- Custom page header alternative example-->
         <div class="d-flex justify-content-between align-items-sm-center flex-column flex-sm-row mb-4">
             <div class="me-4 mb-3 mb-sm-0">
-                <h1 class="mb-0">Dashboard</h1>
+                <h1 class="mb-5">Dashboard</h1>
                 <div class="small">
-                    <span class="fw-500 text-primary">Friday</span>
-                    · March 22, 2024 · 12:16 PM
+                    {{-- <span class="fw-500 text-primary">Friday</span> --}}
+                    {{-- · March 22, 2024 · 12:16 PM --}}
                 </div>
             </div>
         </div>

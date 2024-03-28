@@ -82,12 +82,16 @@
                                             data-bs-toggle="modal" id="detail" data-bs-target="#detailModal"
                                             data-email="{{ $item->user->email }}" data-create="{{ $item->created_at }}"><i
                                                 data-feather="list"></i></button>
+                                                @if(Auth::user()->level == 'Admin')
                                         <button type="button" class="btn btn-datatable btn-icon btn-transparent-dark"
                                             data-bs-toggle="modal" data-bs-target="#deleteModal" id="delete"
                                             data-id='{{ $item->id }}'><i class="fa-solid fa-trash"></i></button>
+                                            @endif
                                     </td>
                                 </tr>
                             @endforeach
+
+                            @if(Auth::user()->level == 'Admin')
                             <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"
                                 aria-labelledby="mySmallModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
@@ -112,6 +116,7 @@
                                         </form>
                                     </div>
                                 </div>
+                                @endif
 
 
                         </tbody>
