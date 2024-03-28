@@ -21,6 +21,7 @@ class AdminController extends Controller
             $array[] = $siswa;
         }
 
+        // dd($array);
 
         $data = [
             'pendaftar' => Siswa::count(),

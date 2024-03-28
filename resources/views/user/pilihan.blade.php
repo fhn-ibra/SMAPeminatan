@@ -13,13 +13,11 @@
                             <p class="text-muted mb-4">Ilmu Pengetahuan Alam</p>
                         </div>
                         <div class="icons-org-create align-items-center mx-auto mt-auto">
-                            <!-- <i class="icon-users" data-feather="users"></i>
-                            <i class="icon-plus fas fa-plus"></i> -->
                             <i class="icon-users fas fa-flask"></i>
                         </div>
                     </div>
                     <div class="card-footer bg-transparent px-5 py-4">
-                        <div class="small text-center"><a class="btn btn-block btn-primary" href="/form/ipa">IPA</a>
+                        <div class="small text-center"><a class="btn btn-block btn-primary" href="/form/ipa">Pilih</a>
                         </div>
                     </div>
                 </div>
@@ -29,7 +27,7 @@
                 <div class="card text-center h-100">
                     <div class="card-body px-5 pt-5 d-flex flex-column align-items-between">
                         <div>
-                            <div class="h3 text-secondary">Ips</div>
+                            <div class="h3 text-secondary">IPS</div>
                             <p class="text-muted mb-4">Ilmu Pengetahuan Sosial</p>
                         </div>
                         <div class="icons-org-join align-items-center mx-auto">
@@ -37,7 +35,7 @@
                         </div>
                     </div>
                     <div class="card-footer bg-transparent px-5 py-4">
-                        <div class="small text-center"><a class="btn btn-block btn-secondary" href="/form/ips">IPS</a>
+                        <div class="small text-center"><a class="btn btn-block btn-secondary" href="/form/ips">Pilih</a>
                         </div>
                     </div>
                 </div>

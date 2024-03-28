@@ -23,7 +23,7 @@
                             <div class="col-xxl-6 col-xl-8">
                                 <h3 class="text-primary">FORMULIR PEMINATAN</h3>
                                 <h5 class="card-title mb-4">Isi Formulir Dengan Baik! Dan Lengkap!</h5>
-                                <form>
+                                <form method="post" action="">
                                     <div class="mb-3">
                                         <label class="small mb-1" for="Nama">Nama Lengkap</label>
                                         <input class="form-control" id="Nama" type="text"
@@ -107,7 +107,10 @@
 
                                     <hr class="my-4" />
 
-                                    <button class="btn btn-primary" type="button" href="/form">Next</button>
+                                    <div class="d-flex justify-content-between">
+                                        <a class="btn btn-light" type="button" href="/form/ips">Previous</a>
+                                        <button class="btn btn-primary" type="button">submit</button>
+                                    </div>
                             </div>
                             </form>
                         </div>
@@ -116,7 +119,6 @@
                 <!-- Wizard tab pane item 2-->
             </div>
         </div>
-    </div>
     </div>
 </main>
 @endsection

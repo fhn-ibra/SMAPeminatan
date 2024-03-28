@@ -21,8 +21,7 @@
                     <!-- Wizard navigation item 1-->
 
 
-
-                    <a class="nav-item nav-link " href="/form/ips/register">
+                        <a class="nav-item nav-link" type="submit" href="/form/ips/register/210">
                         <div class="wizard-step-icon">E</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name">SOSHUM E</div>
@@ -30,14 +29,14 @@
                         </div>
                     </a>
                     <!-- Wizard navigation item 2-->
-                    <a class="nav-item nav-link " href="/form/ips/register">
+                    <a class="nav-item nav-link " href="/form/ips/register/220">
                         <div class="wizard-step-icon">F</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name"> SOSHUM F</div>
                             <div class="wizard-step-text-details">Geo, Sosio, Eko, Bio, Tik</div>
                         </div>
                     </a>
-                    <a class="nav-item nav-link " href="/form/ips/register">
+                    <a class="nav-item nav-link " href="/form/ips/register/230">
                         <div class="wizard-step-icon">G</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name">SOSHUM G</div>

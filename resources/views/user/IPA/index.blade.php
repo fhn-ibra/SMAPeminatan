@@ -22,7 +22,7 @@
 
 
 
-                    <a class="nav-item nav-link " href="/form/ipa/register">
+                    <a class="nav-item nav-link " href="/form/ipa/register/110">
                         <div class="wizard-step-icon">A</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name">SAINTEK A</div>
@@ -30,21 +30,21 @@
                         </div>
                     </a>
                     <!-- Wizard navigation item 2-->
-                    <a class="nav-item nav-link " href="/form/ipa/register">
+                    <a class="nav-item nav-link " href="/form/ipa/register/120">
                         <div class="wizard-step-icon">B</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name"> SAINTEK B</div>
                             <div class="wizard-step-text-details">Kimia, Bio, Mipa, Sos, Tik</div>
                         </div>
                     </a>
-                    <a class="nav-item nav-link " href="/form/ipa/register">
+                    <a class="nav-item nav-link " href="/form/ipa/register/130">
                         <div class="wizard-step-icon">C</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name">SAINTEK C</div>
                             <div class="wizard-step-text-details">Kimia, Tik, Bio, Mipa, Eko</div>
                         </div>
                     </a>
-                    <a class="nav-item nav-link " href="/form/ipa/register">
+                    <a class="nav-item nav-link " href="/form/ipa/register/140">
                         <div class="wizard-step-icon">D</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name">SAINTEK D</div>
@@ -59,3 +59,15 @@
     </div>
 </main>
 @endsection
+
+@push('js')
+@if(session('error'))
+    <script>
+        Swal.fire({
+  icon: "error",
+  title: "Oops..",
+  text: "Sepertinya Kursi Kelas Sudah Penuh"
+});
+    </script>
+    @endif
+@endpush

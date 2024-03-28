@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title> {{ empty($title) ? '(judul)' : $title }} - SMA Peminatan</title>
+    <title> {{ empty($title) ? 'Pendaftaran' : $title }} - SMA Peminatan</title>
     <link href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <link href="../../style/styles.css" rel="stylesheet" />
@@ -95,6 +95,7 @@
         integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
         data-cf-beacon='{"rayId":"865d59890f7f3fb1","version":"2024.3.0","token":"6e2c2575ac8f44ed824cef7899ba8463"}'
         crossorigin="anonymous"></script>
+        @stack('js')
 </body>
 
 </html>

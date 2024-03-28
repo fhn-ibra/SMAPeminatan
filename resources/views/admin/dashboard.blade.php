@@ -69,7 +69,7 @@
                                         <i class="fas fa-circle fa-sm me-1 text-blue"></i>
                                         IPA
                                     </div>
-                                    <div class="fw-500 text-dark">{{ round(($ips/$pendaftar) * 100) }}%</div>
+                                    <div class="fw-500 text-dark">{{ $ips <= 0 ? '0' : round(($ips/$pendaftar) * 100) }}%</div>
                                 </div>
                                 <div
                                     class="list-group-item d-flex align-items-center justify-content-between small px-0 py-2">
@@ -77,7 +77,7 @@
                                         <i class="fas fa-circle fa-sm me-1 text-purple"></i>
                                         IPS
                                     </div>
-                                    <div class="fw-500 text-dark">{{ round(($ipa/$pendaftar) * 100) }}%</div>
+                                    <div class="fw-500 text-dark">{{$ipa <= 0 ? '0' : round(($ipa/$pendaftar) * 100) }}%</div>
                                 </div>
                             </div>
                         </div>
@@ -106,17 +106,13 @@ var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
     type: "bar",
     data: {
-        labels: {
-            !!$kelas!!
-        },
+        labels: {!!$kelas!!},
         datasets: [{
             label: "Kelas",
             backgroundColor: "rgba(0, 97, 242, 1)",
             hoverBackgroundColor: "rgba(0, 97, 242, 0.9)",
             borderColor: "#4e73df",
-            data: {
-                !!$data!!
-            },
+            data: {!!$data!!},
             maxBarThickness: 20
         }]
     },
@@ -158,15 +154,7 @@ var myPieChart = new Chart(ctx, {
     data: {
         labels: ["IPA", 'IPS'],
         datasets: [{
-            data: [{
-                {
-                    round(($ipa / $pendaftar) * 100)
-                }
-            }, {
-                {
-                    round(($ips / $pendaftar) * 100)
-                }
-            }],
+            data: [{{ $ipa <= 0 ? '0' : round(($ipa / $pendaftar) * 100)}}, {{$ips <= 0 ? '0' : round(($ips / $pendaftar) * 100)}}],
             backgroundColor: [
                 "rgba(0, 97, 242, 1)",
                 "rgba(0, 172, 105, 1)",

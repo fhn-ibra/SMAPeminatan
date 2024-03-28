@@ -29,23 +29,26 @@ Route::group(['middleware' => ['guest']], function(){
 
 
 
-// Route::get('/user', function(){
-//     return view('user.dashboard');
-// });
 Route::get('/form', [UserController::class, 'form'])->name('form');
+
+
 Route::get('/user', [UserController::class, 'user'])->name('user');
 
 Route::get('/form/ipa', [UserController::class, 'ipa'])->name('form.ipa');
+Route::get('/form/ipa/register/{id}', [UserController::class, 'pilihanIpa'])->name('pilihan.ipa');
+
 Route::get('/form/ips', [UserController::class, 'ips'])->name('form.ips');
-// Route::get('/Jurusan1', function(){
-//     return view('user.ipa');
-// });
-// Route::get('/Jurusan2', function(){
-//     return view('user.ips');
-// });
-// Route::get('/tes', function(){
-//     return view('user.dashboard');
-// });
+Route::get('/form/ips/register/{id}', [UserController::class, 'pilihanIps'])->name('pilihan.ips');
+
+Route::get('/form/ipa/register', [UserController::class, 'registerIpa'])->name('register.ipa');
+Route::get('/form/ips/register', [UserController::class, 'registerIps'])->name('register.ips');
+
+Route::post('/next', [UserController::class, 'next'])->name('next');
+
+Route::get('/ipa/submit', [UserController::class, 'submitIpa'])->name('submit.ipa');
+Route::get('/ips/submit', [UserController::class, 'submitIps'])->name('submit.ips');
+
+Route::post('/submit', [UserController::class, 'submit'])->name('submit');
 
 
 Route::group(['middleware' => ['auth']], function(){
