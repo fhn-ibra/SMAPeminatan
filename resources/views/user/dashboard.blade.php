@@ -68,7 +68,7 @@
                             <div class="mb-3">
                                 <label class="small mb-1" for="">Alasan</label>
                                 <input class="form-control" id="" type="text"
-                                    placeholder="Enter your " value="{{ $data->alasan }}" />
+                                    placeholder="Enter your " value="{{ $data->alasan }}" readonly />
                             </div>
 
                         </form>
@@ -97,7 +97,7 @@
     <div class="container-xl px-4 mt-n10">
         <div class="card card-header-actions">
             <div class="card-header">
-                <a class="btn btn-sm btn-primary-soft text-primary">Lihat Kelas Lainnya</a>
+                <a class="btn btn-sm btn-primary-soft text-primary" href="/user/kelas">Lihat Kelas Lainnya</a>
 
             </div>
             <div class="card-body">
@@ -141,5 +141,6 @@
                 </table>
             </div>
         </div>
+    </div>
 </main>
 @endsection

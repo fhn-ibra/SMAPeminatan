@@ -48,11 +48,14 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/form/ips/register', [UserController::class, 'registerIps'])->name('register.ips');
 
     Route::post('/next', [UserController::class, 'next'])->name('next');
-
+    
     Route::get('/ipa/submit', [UserController::class, 'submitIpa'])->name('submit.ipa');
     Route::get('/ips/submit', [UserController::class, 'submitIps'])->name('submit.ips');
-
+    
     Route::post('/submit', [UserController::class, 'submit'])->name('submit');
+    
+    Route::get('/user/kelas', [UserController::class, 'kelas'])->name('kelas');
+    Route::get('/user/kelas/{id}', [UserController::class, 'detailKelas']);
     //------------------End User Route------------------
 
     //------------------Admin & Guru Route------------------

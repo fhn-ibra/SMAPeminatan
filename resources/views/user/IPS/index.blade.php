@@ -50,3 +50,15 @@
     </div>
 </main>
 @endsection
+
+@push('js')
+@if(session('error'))
+    <script>
+        Swal.fire({
+  icon: "error",
+  title: "Oops..",
+  text: "Sepertinya Kursi Kelas Sudah Penuh"
+});
+    </script>
+    @endif
+@endpush

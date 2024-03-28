@@ -313,4 +313,23 @@ class UserController extends Controller
         }
          //------------------End If Else IPS------------------
     }
+
+    public function kelas(){
+        $data = [
+            'title' => 'Kelas',
+            'ipa' => Paket::where('jurusan_id', 100)->get(),
+            'ips' => Paket::where('jurusan_id', 200)->get(),
+        ];
+        return view('user.kelas.index', $data);
+    }
+
+    public function detailKelas($id){
+        $data = [
+            'data' => Siswa::where('paket_id', $id)->get(),
+            'title' => Paket::where('id', $id)->value('nama_kelas'),
+            'paket' => Paket::where('id', $id)->value('nama_paket'),
+        ];
+
+        return view('user.kelas.detail', $data);
+    }
 }

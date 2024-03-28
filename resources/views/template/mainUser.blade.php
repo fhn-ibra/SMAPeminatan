@@ -36,10 +36,10 @@
                 <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up"
                     aria-labelledby="navbarDropdownUserImage">
                     <h6 class="dropdown-header d-flex align-items-center">
-                        <img class="dropdown-user-img" src="../img/user.png" />
+                        <img class="dropdown-user-img" src="../../img/user.png" />
                         <div class="dropdown-user-details">
                             <div class="dropdown-user-details-name">{{ Auth::user()->name }}</div>
-                            <div class="dropdown-user-details-email"><a href="/cdn-cgi/l/email-protection"
+                            <div class="dropdown-user-details-email"><a href=""
                                     class="__cf_email__"
                                     data-cfemail="156379607b7455747a793b767a78">{{ Auth::user()->email }}</a>
                             </div>
@@ -77,7 +77,7 @@
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
-    <script src="../js/scripts.js"></script>
+    <script src="../../js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js" crossorigin="anonymous"></script>
     <script src="js/litepicker.js"></script>
@@ -88,7 +88,7 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../js/datatable.js"></script>
+    <script src="../../js/datatable.js"></script>
 
     <script defer
         src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
