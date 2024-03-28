@@ -11,6 +11,12 @@ class UserController extends Controller
 {
     public function form()
     {
+        $find = Siswa::where('user_id', Auth::user()->id)->first();
+
+        if($find != null){
+            return redirect()->route('user');
+        }
+
         return view('user.pilihan', ['title' => 'Pilihan']);
     }
 
@@ -29,6 +35,13 @@ class UserController extends Controller
 
     public function ipa()
     {
+
+        $find = Siswa::where('user_id', Auth::user()->id)->first();
+
+        if($find != null){
+            return redirect()->route('user');
+        }
+
         $data = [
             'title' => 'IPA',
             'A' => Paket::where('nama_paket', 'SAINTEK A')->sum('stok'),
@@ -41,6 +54,12 @@ class UserController extends Controller
     
     public function ips()
     {
+        $find = Siswa::where('user_id', Auth::user()->id)->first();
+
+        if($find != null){
+            return redirect()->route('user');
+        }
+        
         $data = [
             'title' => 'IPS',
             'E' => Paket::where('nama_paket', 'SOSHUM E')->sum('stok'),
