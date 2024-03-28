@@ -69,10 +69,11 @@ class UserController extends Controller
         } else {
             $data = [
                 'title' => 'Form IPS',
-                'id' => session('data')
+                'id' => session('data'),
+                'paket' => Paket::where('id', session('data') + 1)->value('nama_paket')
             ];
 
-            return view('user.IPS.register');
+            return view('user.IPS.register', $data);
         }
     }
 
@@ -109,11 +110,22 @@ class UserController extends Controller
         }
     }
 
+    public function submitIps()
+    {
+        if (!session('data')) {
+            return redirect('/form/ips');
+        } else {
+            $data = (session('data'));
+            return view('user.IPS.hasil', $data);
+        }
+    }
+
     public function submit(Request $request)
     {
 
         $kondisi = true;
 
+        //------------------IF Else IPA------------------
         if ($request->kelas == 'SAINTEK A') {
 
             if ((Paket::where('id', 111)->value('stok') <= 0) && (Paket::where('id', 112)->value('stok') <= 0) && (Paket::where('id', 113)->value('stok') <= 0) && (Paket::where('id', 114)->value('stok') <= 0)) {
@@ -217,5 +229,88 @@ class UserController extends Controller
                 return redirect('/form/ipa')->with(['error' => true]);
             }
         }
+        //------------------End If Else IPA------------------
+
+        //------------------If Else IPS------------------
+        if ($request->kelas == 'SOSHUM E') {
+            if ((Paket::where('id', 211)->value('stok') <= 0) && (Paket::where('id', 212)->value('stok') <= 0) && (Paket::where('id', 213)->value('stok') <= 0) && (Paket::where('id', 214)->value('stok') <= 0)) {
+                return redirect('/form/ips')->with(['error' => true]);
+            }
+
+            while ($kondisi) {
+                $rand = rand('211', '214');
+                $stok = Paket::where('id', $rand)->value('stok');
+
+                if ($stok > 0) {
+                    $siswa = Siswa::create([
+                        'nama' => $request->nama,
+                        'paket_id' => $rand,
+                        'user_id' => Auth::user()->id,
+                        'asal_kelas' => $request->asal,
+                        'kampus_tujuan' => $request->kampus,
+                        'fakultas_tujuan' => $request->fakultas,
+                        'alasan' => $request->alasan
+                    ]);
+
+                    $kelas = Paket::find($rand);
+                    $kelas->stok -= 1;
+                    $kelas->save();
+
+                    $kondisi = false;
+                    return redirect('/user');
+                }
+            }
+        } elseif ($request->kelas == 'SOSHUM F') {
+            if ((Paket::where('id', 221)->value('stok') <= 0) && (Paket::where('id', 222)->value('stok') <= 0)) {
+                return redirect('/form/ips')->with(['error' => true]);
+            }
+
+            while ($kondisi) {
+                $rand = rand('221', '222');
+                $stok = Paket::where('id', $rand)->value('stok');
+
+                if ($stok > 0) {
+                    $siswa = Siswa::create([
+                        'nama' => $request->nama,
+                        'paket_id' => $rand,
+                        'user_id' => Auth::user()->id,
+                        'asal_kelas' => $request->asal,
+                        'kampus_tujuan' => $request->kampus,
+                        'fakultas_tujuan' => $request->fakultas,
+                        'alasan' => $request->alasan
+                    ]);
+
+                    $kelas = Paket::find($rand);
+                    $kelas->stok -= 1;
+                    $kelas->save();
+
+                    $kondisi = false;
+                    return redirect('/user');
+                }
+            }
+        } elseif ($request->kelas == 'SOSHUM G') {
+            $stok = Paket::where('id', $request->id + 1)->value('stok');
+
+            if ($stok > 0) {
+                $siswa = Siswa::create([
+                    'nama' => $request->nama,
+                    'paket_id' => $request->id + 1,
+                    'user_id' => Auth::user()->id,
+                    'asal_kelas' => $request->asal,
+                    'kampus_tujuan' => $request->kampus,
+                    'fakultas_tujuan' => $request->fakultas,
+                    'alasan' => $request->alasan
+                ]);
+
+                $kelas = Paket::find($request->id + 1);
+                $kelas->stok -= 1;
+                $kelas->save();
+
+                return redirect('/user');
+            } else {
+                return redirect('/form/ips')->with(['error' => true]);
+            }
+        }
+         //------------------End If Else IPS------------------
     }
 }

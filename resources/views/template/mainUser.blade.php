@@ -23,7 +23,7 @@
     <nav class="topnav navbar navbar-expand shadow justify-content-between justify-content-sm-start navbar-light bg-white"
         id="sidenavAccordion">
 
-        <a class="navbar-brand pe-3 ps-4 ps-lg-2 ms-5" href="">SMA Peminatan</a>
+        <a class="navbar-brand pe-3 ps-4 ps-lg-2 ms-5" href="/form">SMA Peminatan</a>
 
 
         <!-- Navbar Items-->

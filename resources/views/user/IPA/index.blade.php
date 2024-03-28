@@ -26,7 +26,7 @@
                         <div class="wizard-step-icon">A</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name">SAINTEK A</div>
-                            <div class="wizard-step-text-details">Fisika, Kimia, Bio, Mipa, Tik</div>
+                            <div class="wizard-step-text-details">Fisika, Kimia, Bio, Mipa, TIK</div>
                         </div>
                     </a>
                     <!-- Wizard navigation item 2-->
@@ -34,21 +34,21 @@
                         <div class="wizard-step-icon">B</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name"> SAINTEK B</div>
-                            <div class="wizard-step-text-details">Kimia, Bio, Mipa, Sos, Tik</div>
+                            <div class="wizard-step-text-details">Kimia, Bio, Mipa, Sos, TIK</div>
                         </div>
                     </a>
                     <a class="nav-item nav-link " href="/form/ipa/register/130">
                         <div class="wizard-step-icon">C</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name">SAINTEK C</div>
-                            <div class="wizard-step-text-details">Kimia, Tik, Bio, Mipa, Eko</div>
+                            <div class="wizard-step-text-details">Kimia, TIK, Bio, Mipa, Eko</div>
                         </div>
                     </a>
                     <a class="nav-item nav-link " href="/form/ipa/register/140">
                         <div class="wizard-step-icon">D</div>
                         <div class="wizard-step-text">
                             <div class="wizard-step-text-name">SAINTEK D</div>
-                            <div class="wizard-step-text-details">Bhs Jpg, Kimia, Bio, Sos, Tik</div>
+                            <div class="wizard-step-text-details">Bhs Jpg, Kimia, Bio, Sos, TIK</div>
                         </div>
                     </a>
 
