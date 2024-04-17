@@ -10,7 +10,7 @@
                 <h1 class="mb-5">Dashboard</h1>
                 <div class="small">
                     {{-- <span class="fw-500 text-primary">Friday</span> --}}
-                    {{-- · March 22, 2024 · 12:16 PM --}}
+                    · March 22, 2024 · 12:16 PM
                 </div>
             </div>
         </div>
